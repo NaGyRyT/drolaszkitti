@@ -78,7 +78,7 @@ function backToTop() {
   document.documentElement.scrollTop = 0;
 }
 
-//--------------------Resize footer-------------------
+//--------------------Resize footer map-------------------
 function mapSize(){
   if (window.innerWidth < 700) map.width = "350";
     else map.width = "600";
