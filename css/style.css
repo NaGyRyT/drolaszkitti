@@ -109,7 +109,7 @@ ul{
     width: 25px;
     height: 3px;
     background-color: var(--darkblue);
-    transition: 0.3s; 
+    transition: 0.2s;
 }
 
 .nav-checkbox-line:nth-of-type(2){
@@ -118,25 +118,17 @@ ul{
     align-self: flex-end;
 }
 
-.nav-checkbox:checked ~ .nav-list{
-    left: 0;
-    visibility: visible;
-}
-
 .nav-checkbox:checked ~ .nav-checkbox-button .nav-checkbox-line:nth-of-type(1){
     transform-origin: 0% 0%;
-    transition: transform 0.4s ease-in-out;
     transform: rotate(45deg);
 }
 
 .nav-checkbox:checked ~ .nav-checkbox-button .nav-checkbox-line:nth-of-type(2){
-    transition: transform 0.2s ease-in-out;
     transform: scaley(0);
 }
 
 .nav-checkbox:checked ~ .nav-checkbox-button .nav-checkbox-line:nth-of-type(3){
     transform-origin: 0% 100%;
-    transition: transform 0.4s ease-in-out;
     transform: rotate(-45deg);
 }
 .nav-hidden-label{
@@ -153,17 +145,21 @@ ul{
     white-space: nowrap; /* added line to stop words getting smushed together (as they go onto seperate lines and some screen readers do not understand line feeds as a space */
 }
 
-.nav-list{
+.nav-checkbox:checked ~ .nav-list{
+    /*visibility: visible;*/
     display: flex;
+    transition: 1s;
+}
+
+.nav-list{
+    display: none;
     flex-direction: column;
     align-items: flex-start;
     position: absolute;
-    z-index: -1;
-    left: 100vw;
     top: 60px;
+    left: 0;
     background-color: var(--silver);
-    visibility: hidden;
-    transition: 0.4s, visibility 0.4s;
+    /*visibility: hidden;*/
     box-shadow: 0px 5px 5px 0px var(--shadow);
     list-style: none;
     gap: 1.5rem;
@@ -186,7 +182,7 @@ ul{
     margin: auto;
     height: 3px;
     width: 0;
-    transition: all 0.3s;
+    transition: all 0.2s;
   }
 
 .nav-list-item a:hover::after, .nav-list-item a.active-nav::after{
@@ -457,7 +453,7 @@ footer a:hover{
     }
 
     .nav-list{
-        visibility: visible;
+        display: flex;
         right: 15vw;
         width: auto;
         height: auto;
@@ -469,7 +465,7 @@ footer a:hover{
         flex-direction: row;
         flex-wrap: wrap;
         align-items: center;
-        box-shadow:0 0;
+        box-shadow: 0 0;
         gap: 1.5vw;
         transition:none;
         padding: 0 1vw 0 0;
