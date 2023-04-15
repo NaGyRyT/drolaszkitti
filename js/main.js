@@ -10,10 +10,10 @@ document.querySelector(".js-header").innerHTML = `
               <span class="nav-hidden-label">Fries menu</span>
       </label>
       <ul class="nav-list js-nav-list">
-          <li class="nav-list-item"><a href="#introduction">Bemutatkozás</a></li>
-          <li class="nav-list-item"><a href="#dermatology-cosmetology">Bőrgyógyászat kozmetológia</a></li>
-          <li class="nav-list-item"><a href="#medical-aesthetics">Orvosesztétika</a></li>
-          <li class="nav-list-item"><a href="#pricelist">Árlista</a></li>
+          <li class="nav-list-item"><a href="./index.html#introduction">Bemutatkozás</a></li>
+          <li class="nav-list-item"><a href="./index.html#dermatology-cosmetology">Bőrgyógyászat kozmetológia</a></li>
+          <li class="nav-list-item"><a href="./medical-aesthetics.html">Orvosesztétika</a></li>
+          <li class="nav-list-item"><a href="./index.html#pricelist">Árlista</a></li>
           <li class="nav-list-item"><a href="#contact">Elérhetőség</a></li>
       </ul>
   </nav>
@@ -41,7 +41,7 @@ document.querySelector(".js-footer").innerHTML = `
   <div>
       <iframe title="google map" class="js-map" src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d5451.201886812899!2d19.696378!3d46.910566!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4743da19c2ac043d%3A0x75363cd4824d484e!2zRHIuT2xhc3ogS2l0dGkgQsWRcmd5w7NnecOhc3phdGkgw6lzIGtvem1ldG9sb2dpYWkgbWFnw6FucmVuZGVsxZE!5e0!3m2!1shu!2shu!4v1681371682270!5m2!1shu!2shu" width="500" height="350" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
   </div>
-  <p><a href="#">Adatvédelmi tájékoztató</a></p>
+  <p><a href="./dataprivacy.html">Adatvédelmi tájékoztató</a></p>
   </div>
   <div class="copyright">&copy; 2023 Bőrgyógyászati és Esztétikai Rendelő - Dr. Olasz Kitti - Minden jog fenntartva.</div>
 `;
