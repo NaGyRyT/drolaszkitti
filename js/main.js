@@ -39,9 +39,13 @@ document.querySelector(".js-footer").innerHTML = `
       </ul>
   </div>
   <div>
-      <iframe title="google map" class="js-map" src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d5451.201886812899!2d19.696378!3d46.910566!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4743da19c2ac043d%3A0x75363cd4824d484e!2zRHIuT2xhc3ogS2l0dGkgQsWRcmd5w7NnecOhc3phdGkgw6lzIGtvem1ldG9sb2dpYWkgbWFnw6FucmVuZGVsxZE!5e0!3m2!1shu!2shu!4v1681371682270!5m2!1shu!2shu" width="500" height="350" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+      <iframe title="google map" class="map" src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d5451.201886812899!2d19.696378!3d46.910566!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4743da19c2ac043d%3A0x75363cd4824d484e!2zRHIuT2xhc3ogS2l0dGkgQsWRcmd5w7NnecOhc3phdGkgw6lzIGtvem1ldG9sb2dpYWkgbWFnw6FucmVuZGVsxZE!5e0!3m2!1shu!2shu!4v1681371682270!5m2!1shu!2shu" width="500" height="350" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
   </div>
-  <p><a href="./dataprivacy.html">Adatvédelmi tájékoztató</a></p>
+  <ul> 
+    <li><a href="./dataprivacy.html">Adatvédelmi tájékoztató</a></li>
+    <li><a href="./cookie.html">Süti tájékoztató</a></li>
+    <li><a href="./impression.html">Impresszum</a></li>
+  </ul>
   </div>
   <div class="copyright">&copy; 2023 Bőrgyógyászati és Esztétikai Rendelő - Dr. Olasz Kitti - Minden jog fenntartva.</div>
 `;
@@ -49,7 +53,6 @@ document.querySelector(".js-footer").innerHTML = `
 let menuItem = document.querySelector(".js-nav-list");
 let menuCheckBox = document.querySelector(".js-nav-checkbox");
 let backToTopButton = document.querySelector(".back-to-top");
-let map = document.querySelector(".js-map");
 
 menuItem.addEventListener("click", closeMobilMenu);
 function closeMobilMenu(){
@@ -77,13 +80,6 @@ function backToTop() {
   document.body.scrollTop = 0;
   document.documentElement.scrollTop = 0;
 }
-
-//--------------------Resize footer map-------------------
-function mapSize(){
-  if (window.innerWidth < 700) map.width = "350";
-    else map.width = "600";
-}
-window.addEventListener("resize", mapSize);
 
 //---------------------Carousel-----------------------
 let counter = 0,
