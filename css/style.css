@@ -314,12 +314,14 @@ figcaption{
     padding: 0 0 0.5rem 0;
 
 }
+
 .laser{
     display: flex;
     flex-direction: column;
     align-items: center;
     gap: 0.5rem;
 }
+
 .laser img{
     width: fit-content;
 }
