@@ -1,3 +1,10 @@
+//-------------------head css link + favicon----------
+document.querySelector("head").innerHTML += `
+  <link rel="stylesheet" href="./css/cookies.css">
+  <link rel="stylesheet" href="./css/style.css">
+  <link rel="icon" type="image/png" sizes="32x32" href="./img/favicon/favicon-32x32.png">
+`
+
 //-------------------header---------------------------
 document.querySelector(".js-header").innerHTML = `
   <div class="header-logo">Dr. Olasz Kitti</div>
@@ -18,6 +25,7 @@ document.querySelector(".js-header").innerHTML = `
       </ul>
   </nav>
 `;
+
 //-------------------footer---------------------------
 document.querySelector(".js-footer").innerHTML = `
   <div class="contact">
@@ -49,6 +57,20 @@ document.querySelector(".js-footer").innerHTML = `
   </div>
   <div class="copyright">&copy; 2023 Bőrgyógyászati és Esztétikai Rendelő - Dr. Olasz Kitti - Minden jog fenntartva.</div>
 `;
+
+//-------------Cookie popup----------------------
+document.querySelector(".cookies-container").innerHTML = `
+  <h2>Süti tájékoztató</h2>
+  <div class="cookies-content">
+    <p>Ez a weboldal sütiket használ, hogy a biztonságos böngészés mellett a legjobb felhasználói élményt nyújthassa. Az „Elfogadom” gombra kattintva Ön beleegyezik a sütik használatába. <a href="./cookie.html"> Sütikről bővebben...</a></p>
+  </div>
+  <div class="cookies-buttons">
+    <button class="cookies-button" id="acceptCookiesBtn">Elfogadom</button>
+    <button class="cookies-button" id="declineCookiesBtn">Elutasítom</button>
+  </div>
+`;
+
+
 
 let menuItem = document.querySelector(".js-nav-list");
 let menuCheckBox = document.querySelector(".js-nav-checkbox");
