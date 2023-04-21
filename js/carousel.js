@@ -25,8 +25,8 @@ function changeCarouselPictures(){
 }
 changeCarouselPictures();
 
-var showCurrent = function(){
-  	var itemToShow = Math.abs(counter % itemsCount);
+let showCurrent = function(){
+  	let itemToShow = Math.abs(counter % itemsCount);
   	[].forEach.call( items, function(el){
     	el.classList.remove('show');
   	});

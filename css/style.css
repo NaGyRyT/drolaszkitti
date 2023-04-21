@@ -188,7 +188,9 @@ ul{
     width: 100%;
     background: var(--darkblue);
   }
+
 /**************************main*********************/
+
 main{
     position: relative;
     top: 60px;
@@ -324,8 +326,8 @@ figcaption{
 
 .laser img{
     width: 98%;
-
 }
+
 /**************************footer********************/
 
 .contact{
