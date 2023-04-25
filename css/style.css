@@ -22,7 +22,7 @@ html{
     scroll-behavior: smooth;
 }
 
-h1, h2, h3, h4{
+h1, h2, h3, h4, h5{
     font-family: var(--font-family-header);
     padding: 1rem 0.5rem 0 0.5rem;
 }
@@ -41,6 +41,10 @@ h3{
 
 h4{
     font-size: 1.8rem;
+}
+
+h5{
+    font-size: 1.6rem;
 }
 
 p{
@@ -153,7 +157,7 @@ ul{
 .nav-list{
     display: none;
     flex-direction: column;
-    align-items: flex-start;
+    align-items: center;
     position: absolute;
     top: 60px;
     left: 0;
@@ -166,7 +170,7 @@ ul{
     width: 100%;
 }
 
-.nav-list-item a{
+.nav-list-item{
     text-decoration: none
 }
 
@@ -175,7 +179,7 @@ ul{
     text-align: center;
 }
 
-.nav-list-item a::after{
+.nav-list-item::after{
     content: "";
     display: block;
     margin: auto;
@@ -184,9 +188,14 @@ ul{
     transition: all 0.2s;
   }
 
-.nav-list-item a:hover::after, .nav-list-item a.active-nav::after{
+.nav-list-item:hover::after{
     width: 100%;
     background: var(--darkblue);
+  }
+
+.active-nav-item::after{
+    background: var(--darkblue);
+    width:100%;
   }
 
 /**************************main*********************/
@@ -303,6 +312,7 @@ main{
     width: 95%;
     margin: 0 auto;
     padding: 2.4rem 0 1rem 0;
+    scroll-margin-top:10px;
 }
 
 .medical-aesthetics img, .medical-aesthetics video{
@@ -465,6 +475,7 @@ footer a:hover{
 
     .introduction, .dermatology-cosmetology, .medical-aesthetics, .pricelist, .dataprivacy, .cookie, .impression{
         width: 85%;
+        scroll-margin-top:50px;
     }
 
     .laser{

@@ -17,11 +17,11 @@ document.querySelector(".js-header").innerHTML = `
               <span class="nav-hidden-label">Fries menu</span>
       </label>
       <ul class="nav-list js-nav-list">
-          <li class="nav-list-item"><a href="./index.html#introduction">Bemutatkozás</a></li>
-          <li class="nav-list-item"><a href="./index.html#dermatology-cosmetology">Bőrgyógyászat kozmetológia</a></li>
-          <li class="nav-list-item"><a href="./medical-aesthetics.html">Orvosesztétika</a></li>
-          <li class="nav-list-item"><a href="./index.html#pricelist">Árlista</a></li>
-          <li class="nav-list-item"><a href="#contact">Elérhetőség</a></li>
+          <li><a class="nav-list-item" href="./index.html#introduction">Bemutatkozás</a></li>
+          <li><a class="nav-list-item" href="./index.html#dermatology-cosmetology">Bőrgyógyászat kozmetológia</a></li>
+          <li><a class="nav-list-item" href="./index.html#medical-aesthetics">Orvosesztétika</a></li>
+          <li><a class="nav-list-item" href="./index.html#pricelist">Árlista</a></li>
+          <li><a class="nav-list-item" href="#contact">Elérhetőség</a></li>
       </ul>
   </nav>
 `;
@@ -72,13 +72,35 @@ document.querySelector(".cookies-container").innerHTML = `
 
 
 
-let menuItem = document.querySelector(".js-nav-list");
+let menuItems = document.querySelector(".js-nav-list");
 let menuCheckBox = document.querySelector(".js-nav-checkbox");
 let backToTopButton = document.querySelector(".back-to-top");
+let menuItem = document.querySelectorAll(".nav-list-item");
+let scrollSpyItems = document.querySelectorAll(".js-scrollspy");
 
-menuItem.addEventListener("click", closeMobilMenu);
+//---------------------mobil menu closes---------------------------------------
+menuItems.addEventListener("click", closeMobilMenu);
 function closeMobilMenu(){
     menuCheckBox.checked = false;
+}
+//--------------------if you scroll, active menu item changes------------------
+function scrollSpy(){
+  scrollSpyItems.forEach(sec =>{
+    let top = window.scrollY,
+        offset = sec.offsetTop - 100,
+        height = sec.offsetHeight,
+        id = sec.getAttribute("id");
+    if (top >= offset && top < offset + height){
+      menuItem.forEach(links =>{
+      links.classList.remove("active-nav-item");
+      if ((window.innerHeight + window.scrollY) >= document.body.offsetHeight) {
+        document.querySelector(".nav-list li:last-child a").classList.add("active-nav-item");
+      } else if (id === "landing-section") {
+        return;
+      } else document.querySelector("header nav a[href*=" + id + "]").classList.add("active-nav-item");
+      })
+    }
+  })
 }
 
 //-------------------back to top header logo------------
@@ -88,6 +110,7 @@ headerLogo.addEventListener("click", backToTop); //call backToTop function
 //--------------------back to top button----------------
 window.onscroll = function () {
   scrollFunction();
+  scrollSpy();
 };
 function scrollFunction() {
   if (
