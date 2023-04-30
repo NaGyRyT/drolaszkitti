@@ -10,7 +10,7 @@ const cookiesBox = document.querySelector(".cookies-container"),
       cookiesBox.classList.remove("show");
       if (cookiesButton.id == "acceptCookiesBtn") {
         //set cookies for 365 days. 60 = 1 min, 60 = 1 hours, 24 = 1 day, 365 = 365 days
-        document.cookie = "CookiesPopUp= drolaszkitti.hu; max-age=" + 60 * 60 * 24 * 365;
+        document.cookie = "CookiesPopUp = drolaszkitti.hu; max-age=" + 60 * 60 * 24 * 365;
       }
     });
   });

@@ -17,11 +17,12 @@ document.querySelector(".js-header").innerHTML = `
               <span class="nav-hidden-label">Fries menu</span>
       </label>
       <ul class="nav-list js-nav-list">
-          <li><a class="nav-list-item" href="./index.html#introduction">Bemutatkozás</a></li>
-          <li><a class="nav-list-item" href="./index.html#dermatology-cosmetology">Bőrgyógyászat kozmetológia</a></li>
-          <li><a class="nav-list-item" href="./index.html#medical-aesthetics">Orvosesztétika</a></li>
-          <li><a class="nav-list-item" href="./index.html#pricelist">Árlista</a></li>
+          <li><a class="nav-list-item" href="./#introduction">Bemutatkozás</a></li>
+          <li><a class="nav-list-item" href="./#dermatology-cosmetology">Bőrgyógyászat kozmetológia</a></li>
+          <li><a class="nav-list-item" href="./#medical-aesthetics">Orvosesztétika</a></li>
+          <li><a class="nav-list-item" href="./#pricelist">Árlista</a></li>
           <li><a class="nav-list-item" href="#contact">Elérhetőség</a></li>
+          <li class="dark-light js-dark-light"><img src="" alt="Sötét vagy világos mód"></li>
       </ul>
   </nav>
 `;
@@ -39,7 +40,7 @@ document.querySelector(".js-footer").innerHTML = `
           <li>Lézeres kezelés bejelentkezés:
           <li class="right-ul">+36-30-194-9448</li>
           <li>Weboldal:</li>
-          <li class="right-ul"><a href="http://drolaszkitti.hu">drolaszkitti.hu</a></li>
+          <li class="right-ul"><a href="https://drolaszkitti.hu">drolaszkitti.hu</a></li>
           <li>E-mail:</li>
           <li class="right-ul"><a href="mailto:dr.olaszkitti@gmail.com">dr.olaszkitti@gmail.com</a></li>
           <li>Facebook:</li>
@@ -70,19 +71,42 @@ document.querySelector(".cookies-container").innerHTML = `
   </div>
 `;
 
-
-
 let menuItems = document.querySelector(".js-nav-list");
 let menuCheckBox = document.querySelector(".js-nav-checkbox");
 let backToTopButton = document.querySelector(".back-to-top");
 let menuItem = document.querySelectorAll(".nav-list-item");
 let scrollSpyItems = document.querySelectorAll(".js-scrollspy");
+let darkLight = document.querySelector(".js-dark-light");
+
+//----------------------Dark/light mode----------------------------------------
+darkLight.addEventListener('click',switchDarkLight);
+
+if (localStorage.getItem("dark-mode")==="dark"){
+  document.body.classList.add("dark-mode");
+  document.querySelector(".js-dark-light img").src = "./img/sun.svg";
+  darkLight.classList.add("dark");
+} else document.querySelector(".js-dark-light img").src = "./img/moon.svg";
+
+function switchDarkLight(){
+  if (localStorage.getItem("dark-mode")===""){
+    document.body.classList.add("dark-mode");
+    document.querySelector(".js-dark-light img").src = "./img/sun.svg";
+    darkLight.classList.add("dark");
+    localStorage.setItem("dark-mode", "dark");
+  } else{
+    document.body.classList.remove("dark-mode");
+    document.querySelector(".js-dark-light img").src = "./img/moon.svg";
+    darkLight.classList.remove("dark")
+    localStorage.setItem("dark-mode", "");
+  }
+}
 
 //---------------------mobil menu closes---------------------------------------
 menuItems.addEventListener("click", closeMobilMenu);
 function closeMobilMenu(){
     menuCheckBox.checked = false;
 }
+
 //--------------------if you scroll, active menu item changes------------------
 function scrollSpy(){
   scrollSpyItems.forEach(sec =>{
@@ -94,7 +118,7 @@ function scrollSpy(){
       menuItem.forEach(links =>{
       links.classList.remove("active-nav-item");
       if ((window.innerHeight + window.scrollY) >= document.body.offsetHeight) {
-        document.querySelector(".nav-list li:last-child a").classList.add("active-nav-item");
+        document.querySelector(".nav-list li:nth-last-child(2) a").classList.add("active-nav-item");
       } else if (id === "landing-section") {
         return;
       } else document.querySelector("header nav a[href*=" + id + "]").classList.add("active-nav-item");
@@ -112,6 +136,7 @@ window.onscroll = function () {
   scrollFunction();
   scrollSpy();
 };
+
 function scrollFunction() {
   if (
     document.body.scrollTop > 200 ||
@@ -122,6 +147,7 @@ function scrollFunction() {
     backToTopButton.classList.add('back-to-top-hide');
   }
 }
+
 backToTopButton.addEventListener("click", backToTop);
 function backToTop() {
   document.body.scrollTop = 0;
