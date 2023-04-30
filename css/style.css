@@ -355,7 +355,7 @@ figcaption{
     width: 98%;
 }
 
-/**************************Contact********************/
+/**************************Contact form********************/
 .contact-form{
     display: flex;
     flex-direction: column;
@@ -427,7 +427,7 @@ figcaption{
 .contact-item:focus ~ label,
 .contact-item:not(:placeholder-shown).contact-item:not(:focus)~label{
     font-size: 0.9rem;
-    top: -0.8rem;
+    top: -1rem;
     left: 0.5rem;
     border: none;
 }
@@ -603,7 +603,7 @@ footer a:hover{
 
 /**********************Dark Mode***************************/
 .dark-mode{
-    --silver: #252525; /* #D9D9D9;*/
+    --silver: #303030;
     --darkblue: #bebebe;
     --white: #494949;
     --background: #202020;
@@ -619,6 +619,6 @@ footer a:hover{
 }
 .dark-mode img,
 .dark-mode .map{
-    opacity: 0.75;
+    opacity: 0.8;
 }
 
