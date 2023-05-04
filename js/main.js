@@ -85,7 +85,10 @@ if (localStorage.getItem("dark-mode")==="dark"){
   document.body.classList.add("dark-mode");
   document.querySelector(".js-dark-light img").src = "./img/sun.svg";
   darkLight.classList.add("dark");
-} else document.querySelector(".js-dark-light img").src = "./img/moon.svg";
+} else {
+  document.querySelector(".js-dark-light img").src = "./img/moon.svg";
+  localStorage.setItem("dark-mode", "");
+}
 
 function switchDarkLight(){
   if (localStorage.getItem("dark-mode")===""){
