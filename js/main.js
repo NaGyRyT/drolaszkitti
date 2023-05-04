@@ -119,7 +119,7 @@ function scrollSpy(){
       links.classList.remove("active-nav-item");
       if ((window.innerHeight + window.scrollY) >= document.body.offsetHeight) {
         document.querySelector(".nav-list li:nth-last-child(2) a").classList.add("active-nav-item");
-      } else if (id === "landing-section") {
+      } else if (id === "landing-section" || id ==="contact-form") {
         return;
       } else document.querySelector("header nav a[href*=" + id + "]").classList.add("active-nav-item");
       })
@@ -129,7 +129,7 @@ function scrollSpy(){
 
 //-------------------back to top header logo------------
 let headerLogo = document.querySelector(".header-logo");
-headerLogo.addEventListener("click", backToTop); //call backToTop function
+headerLogo.addEventListener("click", backToTop);
 
 //--------------------back to top button----------------
 window.onscroll = function () {

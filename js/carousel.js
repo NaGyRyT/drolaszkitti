@@ -13,17 +13,14 @@ slide.appendChild(prevBtn);
 slide.appendChild(nextBtn);
 
 //---Change pictures on mobile view---
-function changeCarouselPictures(){
-  let phone = window.innerWidth < 992 ? true : false;
-  if (phone){
+const  isDesktop = window.matchMedia("(min-width: 992px)").matches;
+if (!isDesktop){
     for (let i = 0; i < itemsCount; ++i){
       let imgLink = items[i].querySelector('img').getAttribute('src');
       imgLink = imgLink.slice(0,-5)+"_phone.webp";
       items[i].querySelector('img').setAttribute('src', imgLink);
     }
   }
-}
-changeCarouselPictures();
 
 let showCurrent = function(){
   	let itemToShow = Math.abs(counter % itemsCount);
@@ -32,6 +29,7 @@ let showCurrent = function(){
   	});
   	items[itemToShow].classList.add('show');
 };
+
 function showNext(){
 	counter++; 
 	showCurrent();

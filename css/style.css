@@ -22,9 +22,11 @@ html{
     min-width: 375px;
     scroll-behavior: smooth;
 }
+
 body{
     background-color: var(--background);
 }
+
 h1, h2, h3, h4, h5{
     font-family: var(--font-family-header);
     padding: 1rem 0.5rem 0 0.5rem;
@@ -138,6 +140,7 @@ ul{
     transform-origin: 0% 100%;
     transform: rotate(-45deg);
 }
+
 .nav-hidden-label{
     border: 0;
     padding: 0;
@@ -205,9 +208,11 @@ ul{
     cursor: pointer;
     filter: invert(12%) sepia(82%) saturate(2038%) hue-rotate(195deg) brightness(101%) contrast(101%);
 }
+
 .dark-light img{
     width:22px;
 }
+
 .dark{
     filter: invert(72%) sepia(65%) saturate(3%) hue-rotate(349deg) brightness(99%) contrast(79%);
 }
@@ -224,8 +229,8 @@ main{
     flex-direction: column;
     text-align: center;
     align-items: center;
-    gap: 2.3rem;
-    padding: 1rem 0.5rem 1rem 0.5rem;
+    gap: 1.5rem;
+    padding: 0.5rem 0.5rem 1rem 0.5rem;
     text-shadow: var(--text-shadow);
 }
 
@@ -334,6 +339,8 @@ main{
 }
 
 .medical-aesthetics img, .medical-aesthetics video{
+    display: block;
+    margin: 0 auto;
     width: 100%;
     padding: 1rem 0 0.5rem 0;
 }
@@ -352,10 +359,11 @@ figcaption{
 }
 
 .laser img{
-    width: 98%;
+    max-width: 375px;
 }
 
 /**************************Contact form********************/
+
 .contact-form{
     display: flex;
     flex-direction: column;
@@ -418,6 +426,7 @@ figcaption{
 
 .input-label-holder label{
     position: absolute;
+    font-size: 1.2rem;
     top:0.7rem;
     left: 1rem;
     cursor: text;
@@ -493,6 +502,7 @@ footer a:hover{
     ul{
         line-height: 1.8rem;
     }
+
     p {
         line-height: 1.8rem;
     }
@@ -537,11 +547,11 @@ footer a:hover{
         display: flex;
         flex-direction: row;
         justify-content: space-around;
-        padding: 3rem 0 3rem 0;
+        padding: 2rem 0 2rem 0;
     }
 
     .landing-text{
-        gap: 3rem;
+        gap: 2.5rem;
     }
 
     .landing-text ul {
@@ -572,14 +582,17 @@ footer a:hover{
         scroll-margin-top:50px;
     }
 
+    .medical-aesthetics img, .medical-aesthetics video{
+        max-width: 1024px;
+    }
+
     .laser{
         flex-direction: row;
         justify-content: space-evenly;
         flex-wrap: wrap;
     }
-
     .laser img{
-        width: fit-content;
+        max-width: 375px;
     }
 
     .contact-items{
