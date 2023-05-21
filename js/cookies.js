@@ -1,7 +1,7 @@
 const cookiesBox = document.querySelector(".cookies-container"),
       cookiesButtons = document.querySelectorAll(".cookies-button");
 
-(function putCookieToLocalCookies(){
+(function putCookieToLocalCookies() {
   if (document.cookie.includes("drolaszkitti.hu")) return;
   cookiesBox.classList.add("show");
 

@@ -81,7 +81,7 @@ let darkLight = document.querySelector(".js-dark-light");
 //----------------------Dark/light mode----------------------------------------
 darkLight.addEventListener('click',switchDarkLight);
 
-if (localStorage.getItem("dark-mode")==="dark"){
+if (localStorage.getItem("dark-mode")==="dark") {
   document.body.classList.add("dark-mode");
   document.querySelector(".js-dark-light img").src = "./img/sun.svg";
   darkLight.classList.add("dark");
@@ -91,7 +91,7 @@ if (localStorage.getItem("dark-mode")==="dark"){
 }
 
 function switchDarkLight(){
-  if (localStorage.getItem("dark-mode")===""){
+  if (localStorage.getItem("dark-mode")==="") {
     document.body.classList.add("dark-mode");
     document.querySelector(".js-dark-light img").src = "./img/sun.svg";
     darkLight.classList.add("dark");
@@ -111,13 +111,13 @@ function closeMobilMenu(){
 }
 
 //--------------------if you scroll, active menu item changes------------------
-function scrollSpy(){
-  scrollSpyItems.forEach(sec =>{
+function scrollSpy() {
+  scrollSpyItems.forEach(sec => {
     let top = window.scrollY,
         offset = sec.offsetTop - 100,
         height = sec.offsetHeight,
         id = sec.getAttribute("id");
-    if (top >= offset && top < offset + height){
+    if (top >= offset && top < offset + height) {
       menuItem.forEach(links =>{
       links.classList.remove("active-nav-item");
       if ((window.innerHeight + window.scrollY) >= document.body.offsetHeight) {

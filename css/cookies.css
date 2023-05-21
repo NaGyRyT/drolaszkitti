@@ -13,7 +13,7 @@
     bottom: 0px;
 }
 
-.cookies-container h2{
+.cookies-container h2 {
     padding: 0.2rem;
     font-size: 1.5rem;
 }
@@ -57,7 +57,7 @@
     color: var(--darkblue);
 }
 
-@media (min-width: 992px){
+@media (min-width: 992px) {
 
     .cookies-container {
         right: -380px;
@@ -71,7 +71,7 @@
     }
     .cookies-container.show {
         bottom: 20px;
-        right: 65px;
+        right: 70px;
         transition: right 0.3s ease;
     }
 }

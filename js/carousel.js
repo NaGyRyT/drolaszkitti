@@ -22,7 +22,7 @@ if (!isDesktop){
     }
   }
 
-let showCurrent = function(){
+let showCurrent = function() {
   	let itemToShow = Math.abs(counter % itemsCount);
   	[].forEach.call( items, function(el){
     	el.classList.remove('show');
@@ -30,20 +30,20 @@ let showCurrent = function(){
   	items[itemToShow].classList.add('show');
 };
 
-function showNext(){
+function showNext() {
 	counter++; 
 	showCurrent();
 }
-function showPrev(){
+function showPrev() {
 	counter--; 
 	showCurrent();
 }
 
-slide.addEventListener('mouseover', function(){
+slide.addEventListener('mouseover', function() {
 	interval = clearInterval(interval);
 });
 
-slide.addEventListener('mouseout', function(){
+slide.addEventListener('mouseout', function() {
 	interval = window.setInterval(showNext, timer);
 });
 
